@@ -33,7 +33,11 @@ https://example.com/page
 
 ## How it works
 
-The extension listens for copy events on all web pages. When you copy text that looks like a URL (starts with `http://`, `https://`, or `www.`), it automatically removes everything after the first `?` before placing it on your clipboard.
+The extension automatically cleans URLs in two ways:
+1. **On copy**: When you select and copy a URL, query parameters are stripped
+2. **On paste**: When you paste a URL into a text field, it's automatically cleaned
+
+Works with URLs starting with `http://`, `https://`, or `www.`
 
 ## License
 

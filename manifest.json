@@ -2,11 +2,12 @@
   "manifest_version": 3,
   "name": "SimpleURL",
   "version": "1.0.0",
-  "description": "Automatically strips query parameters from URLs when copying",
+  "description": "Automatically strips query parameters from URLs when copying or pasting",
   "permissions": ["clipboardWrite"],
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
       "js": ["content.js"]
     }
-  ]}
+  ]
+}
