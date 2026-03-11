@@ -44,6 +44,19 @@ git clone https://github.com/finnern/simpleurl.git
 
 > **Note:** Temporary add-ons in Firefox are removed when you restart the browser. For permanent installation, the extension needs to be published on [Firefox Add-ons](https://addons.mozilla.org/).
 
+### Pin the Extension (Recommended)
+
+Click the puzzle piece icon (🧩) in your browser's toolbar and pin SimpleURL. This lets you quickly toggle the extension on/off.
+
+## Toggle On/Off
+
+Click the SimpleURL icon in your toolbar to toggle the extension:
+
+- **Enabled**: Icon shows normally — URLs are automatically cleaned
+- **Disabled**: Icon shows "OFF" badge — URLs are copied/pasted as-is
+
+**Pro tip**: You can toggle while a URL is already in your clipboard! Copy a link, then toggle off and paste to get the full URL with tracking parameters, or toggle on and paste to get the clean version.
+
 ## How it works
 
 - **On copy**: When you select and copy a URL, query parameters are automatically stripped
