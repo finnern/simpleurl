@@ -18,7 +18,7 @@ chrome.action.onClicked.addListener(async () => {
 function updateIcon(enabled) {
   if (enabled) {
     chrome.action.setTitle({ title: 'SimpleURL (enabled) - Click to disable' });
-    chrome.action.setBadge({ text: '' });
+    chrome.action.setBadgeText({ text: '' });
   } else {
     chrome.action.setTitle({ title: 'SimpleURL (disabled) - Click to enable' });
     chrome.action.setBadgeText({ text: 'OFF' });

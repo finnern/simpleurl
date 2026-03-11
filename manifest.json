@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "SimpleURL",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Automatically strips query parameters from URLs when copying or pasting",
   "permissions": ["clipboardWrite", "storage"],
   "icons": {

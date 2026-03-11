@@ -20,29 +20,29 @@ No tracking parameters. Clean and simple.
 
 ## Installation
 
-1. **Download** this repository (click "Code" → "Download ZIP") or clone it:
-   ```
-   git clone https://github.com/finnern/simpleurl.git
-   ```
+### Step 1: Download
 
-2. **Open Chrome** and go to `chrome://extensions/`
+Download this repository (click "Code" → "Download ZIP") or clone it:
+```
+git clone https://github.com/finnern/simpleurl.git
+```
 
-3. **Enable Developer Mode** (toggle in top right corner)
+### Chrome / Edge / Brave
 
-4. **Click "Load unpacked"** and select the `simpleurl` folder
+1. Go to `chrome://extensions/`
+2. Enable **Developer Mode** (toggle in top right corner)
+3. Click **"Load unpacked"**
+4. Select the `simpleurl` folder
+5. Done!
 
-5. **Pin the extension**: Click the puzzle piece icon (🧩) in Chrome's toolbar and pin SimpleURL for easy access
+### Firefox
 
-6. **Done!** The extension is now active.
+1. Go to `about:debugging#/runtime/this-firefox`
+2. Click **"Load Temporary Add-on"**
+3. Select the `manifest.json` file inside the `simpleurl` folder
+4. Done!
 
-## Toggle On/Off
-
-Click the SimpleURL icon in your toolbar to toggle the extension on or off:
-
-- **Enabled**: Icon shows normally, URLs are cleaned automatically
-- **Disabled**: Icon shows "OFF" badge, URLs are copied/pasted as-is
-
-This is useful when you occasionally need to keep tracking parameters in a URL.
+> **Note:** Temporary add-ons in Firefox are removed when you restart the browser. For permanent installation, the extension needs to be published on [Firefox Add-ons](https://addons.mozilla.org/).
 
 ## How it works
 
@@ -56,6 +56,7 @@ Works with all URLs starting with `http://`, `https://`, or `www.`
 - Chrome
 - Edge
 - Brave
+- Firefox
 - Other Chromium-based browsers
 
 ## License
