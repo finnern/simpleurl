@@ -1,43 +1,51 @@
 # SimpleURL
 
-A browser extension that automatically strips query parameters from URLs when you copy them.
+A browser extension that automatically removes tracking parameters from URLs when you copy or paste them.
 
-## What it does
+## The Problem
 
-When you copy a URL like:
+When you copy a link from LinkedIn, Twitter, or other sites, you get URLs like this:
 ```
-https://example.com/page?utm_source=newsletter&tracking=abc123
+https://linkedin.com/posts/someone_topic-7436582875078176769?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAAKCsBPR...
 ```
 
-It becomes:
+## The Solution
+
+SimpleURL automatically cleans the URL to:
 ```
-https://example.com/page
+https://linkedin.com/posts/someone_topic-7436582875078176769
 ```
+
+No tracking parameters. Clean and simple.
 
 ## Installation
 
-### Chrome / Chromium-based browsers (Edge, Brave, etc.)
+1. **Download** this repository (click "Code" → "Download ZIP") or clone it:
+   ```
+   git clone https://github.com/finnern/simpleurl.git
+   ```
 
-1. Download or clone this repository
-2. Go to `chrome://extensions/`
-3. Enable "Developer mode" (toggle in top right)
-4. Click "Load unpacked"
-5. Select the `simpleurl` folder
+2. **Open Chrome** and go to `chrome://extensions/`
 
-### Firefox
+3. **Enable Developer Mode** (toggle in top right corner)
 
-1. Download or clone this repository
-2. Go to `about:debugging#/runtime/this-firefox`
-3. Click "Load Temporary Add-on"
-4. Select the `manifest.json` file
+4. **Click "Load unpacked"** and select the `simpleurl` folder
+
+5. **Done!** The extension is now active.
 
 ## How it works
 
-The extension automatically cleans URLs in two ways:
-1. **On copy**: When you select and copy a URL, query parameters are stripped
-2. **On paste**: When you paste a URL into a text field, it's automatically cleaned
+- **On copy**: When you select and copy a URL, query parameters are automatically stripped
+- **On paste**: When you paste a URL into any text field, it's automatically cleaned
 
-Works with URLs starting with `http://`, `https://`, or `www.`
+Works with all URLs starting with `http://`, `https://`, or `www.`
+
+## Supported Browsers
+
+- Chrome
+- Edge
+- Brave
+- Other Chromium-based browsers
 
 ## License
 
