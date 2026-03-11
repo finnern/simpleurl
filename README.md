@@ -31,7 +31,18 @@ No tracking parameters. Clean and simple.
 
 4. **Click "Load unpacked"** and select the `simpleurl` folder
 
-5. **Done!** The extension is now active.
+5. **Pin the extension**: Click the puzzle piece icon (🧩) in Chrome's toolbar and pin SimpleURL for easy access
+
+6. **Done!** The extension is now active.
+
+## Toggle On/Off
+
+Click the SimpleURL icon in your toolbar to toggle the extension on or off:
+
+- **Enabled**: Icon shows normally, URLs are cleaned automatically
+- **Disabled**: Icon shows "OFF" badge, URLs are copied/pasted as-is
+
+This is useful when you occasionally need to keep tracking parameters in a URL.
 
 ## How it works
 

@@ -1,7 +1,23 @@
 // SimpleURL - Strip query parameters from URLs
 
+let isEnabled = true;
+
+// Load initial state
+chrome.storage.local.get('enabled', ({ enabled }) => {
+  isEnabled = enabled !== false;
+});
+
+// Listen for state changes
+chrome.storage.onChanged.addListener((changes) => {
+  if (changes.enabled) {
+    isEnabled = changes.enabled.newValue;
+  }
+});
+
 // Handle copy events (when selecting and copying URLs manually)
 document.addEventListener('copy', (event) => {
+  if (!isEnabled) return;
+
   const selection = window.getSelection().toString().trim();
 
   if (isURL(selection)) {
@@ -16,6 +32,8 @@ document.addEventListener('copy', (event) => {
 
 // Handle paste events (clean URLs when pasting into text fields)
 document.addEventListener('paste', (event) => {
+  if (!isEnabled) return;
+
   const pastedText = event.clipboardData.getData('text/plain').trim();
 
   if (isURL(pastedText)) {
