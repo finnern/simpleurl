@@ -1,16 +1,19 @@
-// SimpleURL - Strip query parameters from URLs
+// SimpleURL - Content script (runs in isolated world)
+// Handles storage and communicates with inject.js in main world
 
 let isEnabled = true;
 
-// Load initial state
+// Load initial state and notify page script
 chrome.storage.local.get('enabled', ({ enabled }) => {
   isEnabled = enabled !== false;
+  window.postMessage({ type: 'SIMPLEURL_STATE', enabled: isEnabled }, '*');
 });
 
 // Listen for state changes
 chrome.storage.onChanged.addListener((changes) => {
   if (changes.enabled) {
     isEnabled = changes.enabled.newValue;
+    window.postMessage({ type: 'SIMPLEURL_STATE', enabled: isEnabled }, '*');
   }
 });
 
@@ -42,7 +45,6 @@ document.addEventListener('paste', (event) => {
     if (cleanedURL !== pastedText) {
       event.preventDefault();
 
-      // Insert cleaned URL at cursor position
       const target = event.target;
       if (target.isContentEditable || target.tagName === 'TEXTAREA' || target.tagName === 'INPUT') {
         document.execCommand('insertText', false, cleanedURL);
@@ -52,7 +54,7 @@ document.addEventListener('paste', (event) => {
 });
 
 function isURL(text) {
-  return /^(https?:\/\/|www\.)/i.test(text);
+  return /^(https?:\/\/|www\.)/i.test(text.trim());
 }
 
 function stripQueryParams(url) {
